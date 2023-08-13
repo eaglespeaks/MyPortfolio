@@ -72,7 +72,7 @@ let contactsRouter = require('../routes/contacts');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/contacts-list', contactsRouter);
+app.use('/contact_list', contactsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

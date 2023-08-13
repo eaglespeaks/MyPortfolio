@@ -1,0 +1,22 @@
+
+
+<!-- Home section content -->
+<% if (title == 'Home') { %>
+    <%- include ('home.ejs') %> 
+    
+  <!-- About Me section content -->
+    <% } else if (title == 'About me') { %>
+    <%- include ('about.ejs') %>
+     
+  <!-- Projects section content -->
+    <% } else if (title == 'Projects') { %>
+    <%- include ('projects.ejs') %>
+    
+  <!-- Services section content -->
+    <% } else if (title == 'Services') { %>
+    <%- include ('services.ejs') %>
+     
+  <!-- Contact section content -->
+    <% } else if (title == 'Contact') { %>
+    <%- include ('contact.ejs') %>
+    <% } %>

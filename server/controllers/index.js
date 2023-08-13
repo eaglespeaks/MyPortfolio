@@ -28,7 +28,7 @@ module.exports.displayContactPage = (req, res, next) => {
 module.exports.displayLoginPage = (req, res, next) => {
     // check if the user is already logged in
     if (!req.user) {
-        res.render('authentication/login', {
+        res.render('auth/login', {
             title: 'Login',
             messages: req.flash('loginMessage'),
             displayName: req.user ? req.user.displayName : '',
@@ -49,7 +49,7 @@ module.exports.processLoginPage = passport.authenticate('local', {
 module.exports.displayRegisterPage = (req, res, next) => {
     // check if the user is not already logged in
     if (!req.user) {
-        res.render('authentication/register', {
+        res.render('auth/register', {
             title: 'Register',
             messages: req.flash('registerMessage'),
             displayName: req.user ? req.user.displayName : '',
@@ -76,7 +76,7 @@ module.exports.processRegisterPage = (req, res, next) => {
                 req.flash('registerMessage', 'Registration Error: User Already Exists!');
                 console.log('Error: User Already Exists!');
             }
-            return res.render('authentication/register', {
+            return res.render('auth/register', {
                 title: 'Register',
                 messages: req.flash('registerMessage'),
                 displayName: req.user ? req.user.displayName : '',

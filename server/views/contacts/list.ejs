@@ -16,35 +16,35 @@
                     <% if (typeof displayName == 'string' && displayName) { %>
                         <th class="text-center col-2"> Contact Name</th>
                         <th class="text-center col-2">Contact Number</th>
-                        <th class="text-center col-1">Email Address</th>
-                        <th class="text-center col-1"></th>
-                        <th class="text-center col-1"></th>
+                        <th class="text-center col-2">Email Address</th>
+                        <th class="text-center col-2"></th>
+                        <th class="text-center col-2"></th>
                     <% } else { %>
                         <th class="text-center col-2">Contact Name</th>
                         <th class="text-center col-2">Contact Number</th>
-                        <th class="text-center col-1">Email Address</th>
+                        <th class="text-center col-2">Email Address</th>
                     <% } %>
                 </tr>
 
                 <!--Repeatable Template-->
-                <% for(let count = 0; count < ContactList.length; count++) { %>
+                <% for(let count = 0; count < ContactsList.length; count++) { %>
                     <tr class="d-flex">
                         <% if (typeof displayName == 'string' && displayName) { %>
-                            <td class="text-center col-2"><%= ContactList[count].Name %></td>
-                            <td class="text-center col-2"><%= ContactList[count].Number %></td>
-                            <td class="text-center col-1"><%= ContactList[count].Email %></td>
+                            <td class="text-center col-2"><%= ContactsList[count].Name %></td>
+                            <td class="text-center col-2"><%= ContactsList[count].Number %></td>
+                            <td class="text-center col-2"><%= ContactsList[count].Email %></td>
                             <td class="text-center">
-                                <a href="/contact_list/edit<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
+                                <a href="/contact_list/edit<%= ContactsList[count]._id %>" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i> Edit </a>
                             </td>
                             <td class="text-center">
-                                <a href="/contact_list/delete/<%= ContactListt[count]._id %>" class="btn btn-danger btn-sm">
+                                <a href="/contact_list/delete/<%= ContactsList[count]._id %>" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash-alt"></i> Delete </a>
                             </td>
                         <% } else { %>
-                            <td class="text-center col-2"><%= ContactList[count].Name %></td>
-                            <td class="text-center col-2"><%= ContactList[count].Number %></td>
-                            <td class="text-center col-1"><%= ContactList[count].Email %></td>
+                            <td class="text-center col-2"><%= ContactsList[count].Name %></td>
+                            <td class="text-center col-2"><%= ContactsList[count].Number %></td>
+                            <td class="text-center col-2"><%= ContactsList[count].Email %></td>
                         <% } %>
                     </tr>
                 <% } %>

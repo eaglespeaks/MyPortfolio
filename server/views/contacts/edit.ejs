@@ -14,7 +14,7 @@
                     id="nameTextField" 
                     placeholder="Enter the contact name"
                     name="name" 
-                    value="<%= contact.Name %>"
+                    value="<%= contacts.Name %>"
                     required>
                 </div>
                 
@@ -26,7 +26,7 @@
                     id="numberTextField" 
                     placeholder="Enter the phone number"
                     name="number" 
-                    value="<%= contact.Number %>"
+                    value="<%= contacts.Number %>"
                     required>
                 </div>
  
@@ -38,7 +38,7 @@
                     id="emailTextField" 
                     placeholder="Enter the email address"
                     name="email" 
-                    value="<%= contact.Email %>"
+                    value="<%= contacts.Email %>"
                     required>
                 </div>
  
@@ -46,7 +46,7 @@
                 <button class="btn btn-primary" type="submit">
                     <i class="fas fa-edit"></i> Submit</button>
  
-                <a href="/contacts-list" class="btn btn-warning">
+                <a href="/contact_list" class="btn btn-warning">
                     <i class="fas fa-undo"></i> Cancel</a>
             </form>
         </div>

@@ -11,7 +11,7 @@ module.exports.displayContactsList = async (req, res, next) => {
         let contactsList = await Contacts.find();
         
         //show the view for the contacts-list
-        res.render('contact_list/list', 
+        res.render('contacts/list', 
         { title: 'My Contact List', 
         ContactsList: contactsList,
         displayName: req.user ? req.user.displayName : '' })
@@ -23,7 +23,7 @@ module.exports.displayContactsList = async (req, res, next) => {
 //GET Route for displaying the Add page - CREATE Operation
 module.exports.displayAddPage = async (req, res, next) => {
     try {
-        res.render('contact_list/add', 
+        res.render('contacts/add', 
         { title: 'Add Contact', 
         displayName: req.user ? req.user.displayName : '' });
     } catch (err) {
@@ -34,9 +34,9 @@ module.exports.displayAddPage = async (req, res, next) => {
 //POST Route for processing the Add page - CREATE Operation
 module.exports.processAddPage = async (req, res, next) => {
     let newContact = new Contacts({    
-        "Contact Name": req.body.Name,
-        "Contact Number": req.body.Number,
-        "Email Address": req.body.Email
+        "Contact Name": req.body.name,
+        "Contact Number": req.body.number,
+        "Email Address": req.body.email
     });
     try {
         await newContact.save();
@@ -53,7 +53,7 @@ module.exports.displayEditPage = async (req, res, next) => {
 
     try {
         let contactsToEdit = await Contacts.findById(id);
-        res.render('contact_list/edit', 
+        res.render('contacts/edit', 
         { title: 'Edit Contact', 
         contacts: contactsToEdit,
         displayName: req.user ? req.user.displayName : '' });
@@ -68,9 +68,9 @@ module.exports.processEditPage = async (req, res, next) => {
     let id = req.params.id;
 
     let updatedContacts = {
-        "Contact Name": req.body.Name,
-        "Contact Number": req.body.Number,
-        "Email Address": req.body.Email
+        "Contact Name": req.body.name,
+        "Contact Number": req.body.number,
+        "Email Address": req.body.email
     };
 
     try {
