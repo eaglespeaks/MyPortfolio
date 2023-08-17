@@ -25,7 +25,7 @@
     "popper.js": "^1.16.1"
   },
   "description": "Week 3 Lab",
-  "main": "index.js",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/eaglespeaks/COMP229-Week3.git"
